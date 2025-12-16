@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Helix Research Brand Colors */
+    --background: 160 15% 97%;
+    --foreground: 170 50% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 170 50% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 170 50% 8%;
+
+    /* Primary - Deep Teal */
+    --primary: 170 70% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Teal */
+    --secondary: 170 30% 94%;
+    --secondary-foreground: 170 70% 20%;
+
+    /* Muted */
+    --muted: 160 15% 92%;
+    --muted-foreground: 170 20% 40%;
+
+    /* Accent - Vibrant Teal */
+    --accent: 172 100% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 170 20% 88%;
+    --input: 170 20% 88%;
+    --ring: 170 70% 20%;
+
+    --radius: 0.625rem;
+
+    /* Custom brand colors */
+    --helix-dark: 170 60% 12%;
+    --helix-teal: 172 100% 32%;
+    --helix-teal-light: 172 60% 45%;
+    --helix-navy: 200 50% 15%;
+    --helix-success: 160 80% 40%;
+    --helix-warning: 45 100% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(170 60% 12%) 0%, hsl(200 50% 18%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(172 100% 32%) 0%, hsl(172 60% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(160 15% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(170 60% 12% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(170 60% 12% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(170 60% 12% / 0.16);
+    --shadow-glow: 0 0 40px hsl(172 100% 32% / 0.3);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 170 60% 6%;
+    --foreground: 160 15% 95%;
+
+    --card: 170 50% 10%;
+    --card-foreground: 160 15% 95%;
+
+    --popover: 170 50% 10%;
+    --popover-foreground: 160 15% 95%;
+
+    --primary: 172 100% 40%;
+    --primary-foreground: 170 60% 6%;
+
+    --secondary: 170 40% 15%;
+    --secondary-foreground: 160 15% 95%;
+
+    --muted: 170 40% 15%;
+    --muted-foreground: 160 20% 60%;
+
+    --accent: 172 100% 40%;
+    --accent-foreground: 170 60% 6%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 170 40% 18%;
+    --input: 170 40% 18%;
+    --ring: 172 100% 40%;
+
+    --helix-dark: 170 60% 8%;
+    --helix-teal: 172 100% 40%;
+    --helix-teal-light: 172 60% 50%;
+    --helix-navy: 200 50% 10%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .helix-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .helix-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .helix-shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .helix-shadow-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .helix-shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .helix-shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .product-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .trust-badge {
+    @apply flex flex-col items-center text-center p-6 rounded-xl bg-card;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav-link {
+    @apply relative text-foreground/80 font-medium transition-colors duration-200 hover:text-foreground;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-accent scale-x-0 transition-transform duration-300 origin-right;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(172 100% 32% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(172 100% 32% / 0.5);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

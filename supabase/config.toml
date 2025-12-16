@@ -1,0 +1,16 @@
+project_id = "zoeaaswalmsejnvuyyqg"
+
+[functions.woocommerce-products]
+verify_jwt = false
+
+[functions.woocommerce-categories]
+verify_jwt = false
+
+[functions.woocommerce-checkout]
+verify_jwt = false
+
+[functions.woocommerce-product]
+verify_jwt = false
+
+[functions.woocommerce-test]
+verify_jwt = false
